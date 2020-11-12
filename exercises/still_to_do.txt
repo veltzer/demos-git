@@ -1,0 +1,5 @@
+git: refspec that does not pull tags.
+git: show how to verify signature of incoming commit
+	(this probably means we need to push signatures to the server
+	and need to configure this on a regular basis).
+git-gpg: show ids of inner inner keys
