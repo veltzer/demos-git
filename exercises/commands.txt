@@ -1,0 +1,14 @@
+	git fetch - brings change in server to client
+			does not do any merging!
+	git pull - by default brings changed from server to client
+			and does the unification
+			in the "merge" stype.
+	git pull --rebase or put rebase=true in config:
+		bring changes from server to client
+		does unification in the "rebase" style.
+	git rebase - only do unification in the rebase style.
+	git merge - only do unification in the merge style.
+	git fetch - only bring change from server to client.
+
+	git pull = git fetch + git merge
+	git pull --rebase = git fetch + git rebase

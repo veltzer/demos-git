@@ -1,0 +1,10 @@
+- Things to think about:
+	When should you split a repo?
+	When should you unite a repo?
+	How should you split a repo? (the lines of least interaction).
+	How often should one pull or push?
+	Should we have a rule about when people pull? (say each morning)
+		Is it good to have such a rule?
+	When should we push and what reasons are valid for pushing?
+		Is going home a good reason?
+	Why does a repo become unmanageble when it gets larger?

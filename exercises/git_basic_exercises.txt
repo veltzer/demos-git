@@ -1,0 +1,26 @@
+- create a git repo without --bare. Add files and do a commit
+- create a git repo with --base.
+	Can you do commit on it?
+	Clone it and do commit on it that way.
+- Open a new git repo
+	do a few commit.
+	To whom are they attributed?
+	Change you username and email in either the project .git/config or ~/.gitconfig
+	now do more commits
+	what does the log say?
+- Open a bare repo
+	Clone to two users
+	Experience what happens when you want to push and the content changed.
+- Open a bare repo.
+	Clone to two users.
+	Create a "long" file (30 lines is enough).
+	make changed which are in the same are with both users.
+	But *ALSO* create a change by one of the users which changed an area of the file
+		that the other user DID NOT change.
+	What happens when you merge?
+- Open a bare repo.
+	Clone to two users.
+	add a file called "foo.txt"
+	make user1 do a commit that changes foo.txt
+	make user2 do a commit that renames foo.txt -> bar.txt
+	Could git merge your chanes?

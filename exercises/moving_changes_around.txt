@@ -1,0 +1,26 @@
+
+
+1. Create feature branch. Do commits on it. Move these commit to master using the server.
+
+2. Create two users each with his/her own feature branches. Fold both feature branches
+	into master.
+
+3. Create two users each with his/her own feature branch. Move changes between
+	the two users without going through the master branch but with the aid
+	of the server. using two methods:
+		- merge and then rebase
+		- cherry pick
+
+4. Create one user with two local branches. Move changes between these branches
+	locally (without pushing anything to the server).
+	Do it using two methods:
+		- pull (use "." as the origin)
+		- cherry pick
+
+5. Simulate working on a long term feature branch.
+	Create a server.
+	Brancn into a feature branch.
+	Do some commit on the feature branch.
+	Push (from another user) commits to the master.
+	Sync up against the mater branch (use rebase of course).
+	Repeat

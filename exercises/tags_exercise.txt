@@ -1,0 +1,15 @@
+- create a "server" with two users.
+- see how non annotated tags don't pass between the users.
+- see how annotated tags do pass between users.
+- create your own private key (use gpg for that).
+- tell git to use your key.
+- commit a change with signing (commit).
+	git commit -s
+- create a signed tag.
+	git tag -s -a
+- open .git/config
+- find a line like this:
+	fetch = +refs/heads/*:refs/remotes/origin/*
+- what do you think it means?
+- change it.
+- did it work?
