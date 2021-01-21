@@ -7,3 +7,4 @@ touch hello.txt
 git add hello.txt
 git commit -m "first commit"
 git push
+../create_commits.sh
