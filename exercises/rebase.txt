@@ -11,4 +11,5 @@
 * hint:
 	$ git rebase -i [commit id]
 	[commit id] can be: id (binary), HEAD claculation, tag
+	add severl commits with:
 	$ for i in {1..5}; do touch $i.txt; git add $i.txt; git commit -m "commit $i"; done
