@@ -13,3 +13,8 @@ git add hello.txt
 git commit -m "first commit"
 cd ../example1
 git commit -m "first commit"
+
+# lets show the git log of the two project
+git log
+cd ../example2
+git log
