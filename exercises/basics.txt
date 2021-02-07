@@ -1,5 +1,5 @@
 - create a git repo without --bare. Add files and do a commit
-- create a git repo with --base.
+- create a git repo with --bare.
 	Can you do commit on it?
 	Clone it and do commit on it that way.
 - Open a new git repo
