@@ -1,0 +1,33 @@
+
+
+Exercise in private/public keys, github and git signing
+=======================================================
+- sign up to github, if you already have an account then don't and just
+	use your existing account.
+	https://github.com
+- follow github instructions on creating and registering a gpg key.
+	https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification
+	* Pay attention to create a key with the same email and name of your github
+	account
+- create a new github repositroy called "gpg-sign-demo"
+- clone it
+- create a commit and sign it. Here are the options:
+	1) git commit -S
+	2) git commit -S<keyid>
+	3) put the following snipplet in your ~/.gitconfig or .git/config files:
+	===========>8===============
+	[commit]
+	gpgsign = true
+	===========>8===============
+	optionally: put your signing key in your .gitconfig or .git/config like so:
+	===========>8===============
+	[user]
+		name = Mark Veltzer
+		email = mark.veltzer@gmail.com
+		signingkey = 73C128F9
+	===========>8===============
+	This will make the entry under signingkey your default key.
+- push it to github.
+- verity that you commit is signed
+	go to the github website, find your repository, find you commit and see that is has the
+	[verified] box at it's description.
