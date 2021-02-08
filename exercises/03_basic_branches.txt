@@ -1,0 +1,14 @@
+
+- Create a repository with an initial commit
+	$ git init [repo_name]
+- Create several commits on top of the initiali commit.
+- Branch out to branch "branch1" 
+- Create several commits on top of branch1
+- Return to master
+- Add several commits
+- Branch to "branch2"
+- Move (either push or pull) commits from branch1 to branch2
+- Collapse the branch2 branch to master
+- update branch1 from master
+- collapse branch1 to master
+- delete branches branch1 and branch2
