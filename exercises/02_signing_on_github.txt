@@ -9,6 +9,8 @@ Exercise in private/public keys, github and git signing
 	https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification
 	* Pay attention to create a key with the same email and name of your github
 	account
+	If generating the key takes too long here is how to speed it up:
+	https://www.howtoforge.com/helping-the-random-number-generator-to-gain-enough-entropy-with-rng-tools-debian-lenny
 - create a new github repositroy called "gpg-sign-demo"
 - clone it
 - create a commit and sign it. Here are the options:
