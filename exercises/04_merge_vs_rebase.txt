@@ -1,5 +1,5 @@
 
-
+compare merge and rebase ways of dealing with merges
 
 - execute two flows with one server and two users.
 	One does things with rebase
