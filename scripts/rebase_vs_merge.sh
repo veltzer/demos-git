@@ -65,6 +65,11 @@ cd ../user1
 git pull
 
 echo "recording logs for posterity..."
-git log --pretty=format:"%h %s" --graph > ../user1_rebase_log.txt
+echo "user1"
+git log --pretty=format:"%h %s" --graph
+echo "user2"
 cd ../user2
-git log --pretty=format:"%h %s" --graph > ../user2_rebase_log.txt
+git log --pretty=format:"%h %s" --graph
+
+cd ..
+rm -rf server user1 user2
