@@ -1,15 +1,19 @@
 - create a "server" with two users.
-- see how non annotated tags don't pass between the users.
-- see how annotated tags do pass between users.
-- create your own private key (use gpg for that).
-- tell git to use your key.
-- commit a change with signing (commit).
-	git commit -s
-- create a signed tag.
-	git tag -s -a
-- open .git/config
-- find a line like this:
+- create tags by one of the users.
+	- create unsigned tags
+	- create signed tag (git tag -s)
+- do tags get passed to server or to the other users when you push and pull?
+- if yes how can you stop tags being pushed around.
+- if no how can you make tags pass?
+
+Advanced:
+- open your .git/config and find a line like this:
 	fetch = +refs/heads/*:refs/remotes/origin/*
 - what do you think it means?
 - change it.
 - did it work?
+
+NOTES:
+in order to sign tags you need to:
+	- have your own private key (we already did that)
+	- tell git to user your key ([user] signingkey= in your .gitconfig)
