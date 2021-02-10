@@ -20,5 +20,5 @@
 	Brancn into a feature branch.
 	Do some commit on the feature branch.
 	Push (from another user) commits to the master.
-	Sync up against the mater branch (use rebase of course).
+	Sync up against the master branch (use rebase of course).
 	Repeat
