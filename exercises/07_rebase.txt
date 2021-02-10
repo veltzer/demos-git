@@ -1,8 +1,8 @@
-- create repos with several commits (or clone
-	one from github?)
+- create a repo with several commits
+	(you can clone one from github)
 - do the following:
 	- remove some commit from history (drop)
-	- squash some commits into one commit
+	- squash several commits into one commit
 	- rename commits
 	- reorder commits
 	- some of the above together
