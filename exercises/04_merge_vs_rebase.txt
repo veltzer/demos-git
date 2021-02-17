@@ -1,11 +1,16 @@
-
-compare merge and rebase ways of dealing with merges
-
-- execute two flows with one server and two users.
-	One does things with rebase
-	the other with merge.
-	What is difference in the logs after the entire merge is over?
-
-- do the same as above but create a real conflict.
-	Now answer the same question:
-	What is difference in the logs after the entire merge is over?
+Open a repo on github, use an existing one or create a local repo
+via "git init --bare"
+Use that repo to simulate the work of two users working against
+that repo.
+Simulate two ways of merging the code that these two users write:
+- the "merge" way
+	by using "git pull"
+	which is really "git fetch" and "git merge"
+	under the hood
+- the "rebase" way
+	by using "git fetch"
+	and "git rebase"
+	* bonus points: try the --interactive flag to git-rebase
+Compare the two ways of working in terms of the git log of the master
+repository after the work has been done.
+Which do you like and why?
