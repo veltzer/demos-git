@@ -1,7 +1,7 @@
 - create a git repo without --bare. Add files and do a commit
 - create a git repo with --bare.
-	Can you do commit on it?
-	Clone it and do commit on it that way.
+	Can you do a commit on it?
+	Clone it and do a commit on it that way.
 - Open a new git repo
 	do a few commit.
 	To whom are they attributed?
@@ -23,4 +23,4 @@
 	add a file called "foo.txt"
 	make user1 do a commit that changes foo.txt
 	make user2 do a commit that renames foo.txt -> bar.txt
-	Could git merge your chanes?
+	Could git merge your changes?
