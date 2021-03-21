@@ -33,3 +33,12 @@ function server_two_users() {
 	git pull
 	cd ../
 }
+
+do_wait=0
+
+function waitkey () {
+	if [[ $do_wait -eq 1 ]]
+	then
+		read
+	fi
+}

@@ -1,13 +1,6 @@
 #!/bin/bash
 
-do_wait=0
-
-function waitkey () {
-	if [[ $do_wait -eq 1 ]]
-	then
-		read
-	fi
-}
+source common.sh
 
 rm -rf server user1 user2
 git init --bare server
