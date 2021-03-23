@@ -87,15 +87,20 @@ function doit() {
 	rm -rf server user1 user2
 }
 
+
+exec 3>&1 4>&2 1> /dev/null 2> /dev/null
+
 debug merge
 doit false
 debug rebase
 doit true
 
+exec 1>&3 2>&4
+
 # show results
-echo
 echo "merge log"
 cat /tmp/log1_false
+echo
 echo
 echo "rebase log"
 cat /tmp/log1_true
