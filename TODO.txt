@@ -1,5 +1,15 @@
-git: refspec that does not pull tags.
-git: show how to verify signature of incoming commit
+examples of rewrite history which changes all ids above rewritten file.
+	do a demo of this.
+	just changing the name of a commit a few commits above.
+what happends when these collide in checkout:
+	branch name
+	file name
+	tag name
+rewrite history without changing ids.
+undoing things samples.
+
+do demo of refspec that does not pull tags.
+show how to verify signature of incoming commit
 	(this probably means we need to push signatures to the server
 	and need to configure this on a regular basis).
 git-gpg: show ids of inner inner keys
