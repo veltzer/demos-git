@@ -13,10 +13,8 @@
 - Open a bare repo.
 	Clone to two users.
 	Create a "long" file (30 lines is enough).
-	make changed which are in the same are with both users.
-	But *ALSO* create a change by one of the users which changed an area of the file
-		that the other user DID NOT change.
-	What happens when you merge?
+	Create a confict between the users, this means that both users
+	will change the same area in the file in different ways.
 - Open a bare repo.
 	Clone to two users.
 	add a file called "foo.txt"
