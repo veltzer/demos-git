@@ -1,4 +1,3 @@
-- create a git repo without --bare. Add files and do a commit
 - create a git repo with --bare.
 	Can you do a commit on it?
 	Clone it and do a commit on it that way.
