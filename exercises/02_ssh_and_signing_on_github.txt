@@ -4,6 +4,9 @@ This exercise has two parts but first you must do the following:
 - sign up to github, if you already have an account then don't and just
 	use your existing account.
 	https://github.com
+- for windows users:
+	install gitbash and accept all defaults and you will have the tools you need for this
+	exercise (gpg and ssh-keygen).
 
 Part1: ssh access to github
 - follow github instructions on creating and registering an ssh key.
