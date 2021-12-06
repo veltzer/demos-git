@@ -11,6 +11,7 @@ This exercise has two parts but first you must do the following:
 Part1: ssh access to github
 - follow github instructions on creating and registering an ssh key.
 	https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+	https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 	* You don't really need to do the ssh-agent stuff
 	* Pay attention to create a key without a password (insist on it twice and it will work)
 	* Remember to configure github to accept the key that you created (add it to your ssh keys collection
