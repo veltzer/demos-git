@@ -33,7 +33,7 @@ function doit() {
 	git log --pretty=format:"%h %s" --graph
 	debug "histories above should be the same..."
 	debug "press any key..."
-	waitkey
+	git_common_waitkey
 	cd ../user1
 	for i in {1..5}; do touch user1change$i.txt; git add . ; git commit -m "user1 change $i"; done
 	cd ../user2
@@ -47,19 +47,19 @@ function doit() {
 	git log --pretty=format:"%h %s" --graph
 	debug "histories above are different..."
 	debug "press any key..."
-	waitkey
+	git_common_waitkey
 
 	debug "user1 pushed..."
 	cd ../user1
 	git push
 	debug "press any key..."
-	waitkey
+	git_common_waitkey
 
 	debug "user2 cannot push..."
 	cd ../user2
 	git push
 	debug "press any key..."
-	waitkey
+	git_common_waitkey
 
 	debug "user2 pulls..."
 	if $rebase

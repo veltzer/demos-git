@@ -1,4 +1,4 @@
-function commits() {
+function git_common_commits() {
 	local number=$1
 	local name=$2
 	let x=1
@@ -11,7 +11,7 @@ function commits() {
 	done
 }
 
-function repo_with_several_commits() {
+function git_common_repo_with_several_commits() {
 	rm -rf repo
 	git init repo
 	cd repo
@@ -19,7 +19,7 @@ function repo_with_several_commits() {
 	cd ../
 }
 
-function server_two_users() {
+function git_common_server_two_users() {
 	rm -rf server user?
 	git init --bare server
 	git clone server user1
@@ -36,7 +36,7 @@ function server_two_users() {
 
 do_wait=0
 
-function waitkey () {
+function git_common_waitkey() {
 	if [[ $do_wait -eq 1 ]]
 	then
 		read

@@ -21,7 +21,7 @@ echo "history for user2..."
 git log --pretty=format:"%h %s" --graph
 echo "histories above should be the same..."
 echo "press any key..."
-waitkey
+git_common_waitkey
 cd ../user1
 for i in {1..5}; do touch user1change$i.txt; git add . ; git commit -m "user1 change $i"; done
 cd ../user2
@@ -35,19 +35,19 @@ echo "history for user2..."
 git log --pretty=format:"%h %s" --graph
 echo "histories above are different..."
 echo "press any key..."
-waitkey
+git_common_waitkey
 
 echo "user1 pushed..."
 cd ../user1
 git push
 echo "press any key..."
-waitkey
+git_common_waitkey
 
 echo "user2 cannot push..."
 cd ../user2
 git push
 echo "press any key..."
-waitkey
+git_common_waitkey
 
 echo "user2 pulls..."
 git pull --rebase
