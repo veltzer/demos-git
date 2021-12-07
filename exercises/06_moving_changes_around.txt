@@ -1,6 +1,3 @@
-- Create a server with two users. Create first commit.
-	Create a feature branch. Do commits on it. Move these commit to master using the server (through the server).
-
 - Create a local repository with a master branch. Create two feature branch.
 	Fold both feature branches into master with either push or pull.
 
