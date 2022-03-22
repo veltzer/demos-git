@@ -2,7 +2,7 @@
 	Can you do a commit on it?
 	Clone it and do a commit on it that way.
 - Open a new git repo
-	do a few commit.
+	do a few commits.
 	To whom are they attributed?
 	Change you username and email in either the project .git/config or ~/.gitconfig
 	now do more commits
