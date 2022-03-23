@@ -42,3 +42,21 @@ function git_common_waitkey() {
 		read
 	fi
 }
+
+function debug() {
+	local msg=$1
+	if $debug
+	then
+		echo $msg
+	fi
+}
+
+debug=false
+
+function debug() {
+	local msg=$1
+	if $debug
+	then
+		echo $msg
+	fi
+}
