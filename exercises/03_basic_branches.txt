@@ -1,8 +1,7 @@
-
 - Create a repository with an initial commit
 	$ git init [repo_name]
 	and create a first commit
-- Create several commits on top of the initiali commit.
+- Create several commits on top of the initial commit.
 - Branch out to branch "branch1" 
 	$ git branch [branchname]
 - Create several commits on top of branch1
