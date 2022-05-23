@@ -1,0 +1,42 @@
+What is fast forward?
+
+Fast forward happens (sometimes) at pull time!
+
+When your history is a prefix of the remote history
+then there is no need for any type of merging when pulling
+
+So when pulling the history of the remote is brought to local
+and the pointer of head is moved to the latest pointer.
+
+That is fast forward.
+
+e.g.
+
+your history c1, c2, c3
+
+remote history c1, c2, c3, c4, c5
+
+the extra commits c4, c5 are brought to your local folder and HEAD
+is placed on c5 instead of c3.
+
+Pointing HEAD to c5 is VERY FAST (O(1)).
+Fast forward does not require git to look at the file level. Only at the
+history of commits.
+
+What if git cant fast forward and has to merge?
+
+your history: c1, c2, c3, a1, a2, a3
+remote history: c1, c2, c3, b1, b2
+
+what will the history be after pull which is fetch+merge?
+c1, c2, c3, a1, a2, a3, b1, b2, merge commit
+
+This is very problematic because of several reasons:
+- if after this pull we push to the server - the history of the server
+  changes!
+
+
+It seems that in new versions of git history is not linear and so commits
+may keep their checksums when doing merge or rebase.
+
+check out the difference between merge and rebase
