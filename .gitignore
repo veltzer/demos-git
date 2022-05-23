@@ -5,3 +5,5 @@
 /demo
 *.swp
 *.stamp
+*.py[oc]
+__pycache__/
