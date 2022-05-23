@@ -7,3 +7,4 @@
 *.stamp
 *.py[oc]
 __pycache__/
+/out/
