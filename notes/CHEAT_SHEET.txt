@@ -1,8 +1,12 @@
 	git fetch - brings change in server to client
 			does not do any merging!
+			This is for all b
 	git pull - by default brings changed from server to client
 			and does the unification
 			in the "merge" stype.
+		   brings in the current branch and all branches that exists on the remote and have local
+		   counterparts. Does merge on the current branch but *DOES NOT* do merge on the other
+		branches.
 	git pull --rebase or put rebase=true in config:
 		bring changes from server to client
 		does unification in the "rebase" style.
