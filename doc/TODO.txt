@@ -1,3 +1,5 @@
+do example of git-restore
+do example of git switch between branches
 examples of rewrite history which changes all ids above rewritten file.
 	do a demo of this.
 	just changing the name of a commit a few commits above.

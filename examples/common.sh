@@ -15,6 +15,16 @@ function common_create_commits() {
 	done
 }
 
+function common_cd_repo() {
+	local repo=$1
+	local folder="playground/${repo}"
+	cd "${folder}"
+}
+
+function common_cd_repo_back() {
+	cd ../../
+}
+
 function common_show_history() {
 	local repo=$1
 	local folder="playground/${repo}"
