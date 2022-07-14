@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+# https://devconnected.com/how-to-undo-last-git-commit/
+
 source common.sh
 
 common_cleanup
