@@ -3,16 +3,20 @@ function common_cleanup() {
 }
 
 function common_create_commits() {
-	local number=$1
-	local name=$2
-	let x=1
-	while [[ $x -le ${number} ]]
+	local repo=$1
+	local number=$2
+	local name=$3
+	local folder="playground/${repo}"
+	cd "${folder}"
+	let "x=1"
+	while [ "${x}" -le "${number}" ]
 	do
 		touch "${name}_${x}"
 		git add "${name}_${x}"
-		git commit -m "${name} commit ${x}"
+		git commit -m "${name} - ${x}"
 		let "x=x+1"
 	done
+	cd ../../
 }
 
 function common_cd_repo() {
@@ -38,9 +42,7 @@ function common_repo_with_one_commit() {
 	local name=$2
 	local folder="playground/${repo}"
 	git init "${folder}"
-	cd "${folder}"
-	common_create_commits 1 $name
-	cd ../../
+	common_create_commits "${repo}" 1 "${name}"
 }
 
 function common_create_repo_with_commits() {
@@ -49,9 +51,7 @@ function common_create_repo_with_commits() {
 	local name=$3
 	local folder="playground/${repo}"
 	git init "${folder}"
-	cd "${folder}"
-	common_create_commits $number $name
-	cd ../../
+	common_create_commits "${repo}" "${number}" "${name}"
 }
 
 function common_server_two_users() {
@@ -72,7 +72,7 @@ function common_server_two_users() {
 do_wait=0
 
 function common_waitkey() {
-	if [[ $do_wait -eq 1 ]]
+	if [[ "${do_wait}" -eq 1 ]]
 	then
 		read
 	fi
@@ -82,8 +82,8 @@ debug=false
 
 function common_debug() {
 	local msg=$1
-	if $debug
+	if "${debug}"
 	then
-		echo $msg
+		echo "${msg}"
 	fi
 }

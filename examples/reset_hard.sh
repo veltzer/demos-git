@@ -1,21 +1,17 @@
-#!/bin/bash
+#!/bin/bash -e
 
 source common.sh
 
-if [ -d demo ]
-then
-	rm -rf demo
-fi
-git init demo
-cd demo
-commits 10 "commits"
-echo -e "\n\nbefore revert"
-git log --oneline
-
-echo -e "\n\ndoing revert"
+common_cleanup
+common_create_repo_with_commits demo 10 "commit"
+echo "before reset"
+common_show_history demo
+common_cd_repo demo
 git reset --hard HEAD~5
-
-echo -e "\n\nafter revert"
-git log --oneline
-cd ..
-rm -rf demo
+common_cd_repo_back
+echo "after reset"
+common_show_history demo
+echo "adding new commits"
+common_create_commits demo 5 "new commit"
+common_show_history demo
+common_cleanup
