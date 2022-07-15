@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash -e
+
 rm -rf server user1 user2
 git init --bare server
 git clone server user1

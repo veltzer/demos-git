@@ -12,8 +12,8 @@ function common_create_commits() {
 	while [ "${x}" -le "${number}" ]
 	do
 		touch "${name}_${x}"
-		git add "${name}_${x}"
-		git commit -m "${name} - ${x}"
+		git add "${name}_${x}" > /dev/null
+		git commit -m "${name} - ${x}" > /dev/null
 		let "x=x+1"
 	done
 	cd ../../
@@ -41,7 +41,7 @@ function common_repo_with_one_commit() {
 	local repo=$1
 	local name=$2
 	local folder="playground/${repo}"
-	git init "${folder}"
+	git init "${folder}" > /dev/null
 	common_create_commits "${repo}" 1 "${name}"
 }
 
@@ -83,6 +83,16 @@ debug=false
 function common_debug() {
 	local msg=$1
 	if "${debug}"
+	then
+		echo "${msg}"
+	fi
+}
+
+notice=false
+
+function common_notice() {
+	local msg=$1
+	if "${notice}"
 	then
 		echo "${msg}"
 	fi

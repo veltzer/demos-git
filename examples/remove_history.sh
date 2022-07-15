@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # This example shows how to remove history
 # It seems that shallow-exclude and --depth are only usable for remote repos

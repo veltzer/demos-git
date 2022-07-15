@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # cleanup
 rm -rf server user1 user2

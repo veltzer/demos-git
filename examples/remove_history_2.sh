@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # This example shows how to remove history
 # This uses the shallow features

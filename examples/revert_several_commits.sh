@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # This is an exmample of how to rewrite history using "git filter-branch"
 # References:
