@@ -55,18 +55,18 @@ function common_create_repo_with_commits() {
 }
 
 function common_server_two_users() {
-	rm -rf server user?
-	git init --bare server
-	git clone server user1
-	git clone server user2
-	cd user1
+	rm -rf playgroud/{server,user1,user2}
+	git init --bare playground/server
+	git clone playground/server playground/user1
+	git clone playground/server playground/user2
+	cd playground/user1
 	touch hello.txt
 	git add hello.txt
 	git commit -m "first commit"
 	git push
 	cd ../user2
 	git pull
-	cd ../
+	cd ../../
 }
 
 do_wait=0
