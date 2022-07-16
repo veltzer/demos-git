@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
-# This is an exmample of how to rewrite history using "git filter-branch"
+# This is an exmample of how to rewrite history using "git-filter-repo"
 # References:
-# - https://gist.github.com/kanzure/5558267
+# - https://github.com/newren/git-filter-repo
 
 source common.sh
 

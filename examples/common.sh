@@ -2,7 +2,7 @@ function common_cleanup() {
 	rm -rf playground/*
 }
 
-redirect=false
+redirect=true
 
 function common_setup() {
 	common_cleanup
