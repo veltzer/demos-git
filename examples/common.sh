@@ -21,13 +21,14 @@ function common_create_commits() {
 	local number=$2
 	local name=$3
 	local folder="playground/${repo}"
+	local branch=$(git rev-parse --abbrev-ref HEAD)
 	cd "${folder}"
 	let "x=1"
 	while [ "${x}" -le "${number}" ]
 	do
 		touch "${name}_${x}"
 		git add "${name}_${x}" > /dev/null
-		git commit -m "${name} - ${x}" > /dev/null
+		git commit -m "${branch} - ${name} - ${x}" > /dev/null
 		let "x=x+1"
 	done
 	cd ../../

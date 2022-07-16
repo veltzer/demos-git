@@ -14,8 +14,5 @@ git push
 cd ../user2
 git pull
 
-cd ../user1
-../create_commits.sh
-
-cd ../user2
-../create_commits.sh
+common_create_commits user1 10 "name"
+common_create_commits user2 10 "name"

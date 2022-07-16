@@ -18,11 +18,11 @@ git pull
 cd ../user1
 git branch feature_x
 git checkout feature_x
-../create_commits.sh
+common_create_commits "feature_x" 10 "name"
 git push --set-upstream origin feature_x
 
 cd ../user2
 git branch feature_y
 git checkout feature_y
-../create_commits.sh
+common_create_commits "feature_y" 10 "name"
 git push --set-upstream origin feature_y
