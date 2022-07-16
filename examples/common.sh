@@ -2,6 +2,20 @@ function common_cleanup() {
 	rm -rf playground/*
 }
 
+redirect=true
+
+function common_setup() {
+	common_cleanup
+	if ${redirect}
+	then
+		exec &>/dev/null
+	fi
+}
+
+function common_finish() {
+	common_cleanup
+}
+
 function common_create_commits() {
 	local repo=$1
 	local number=$2
@@ -86,6 +100,11 @@ function common_debug() {
 	then
 		echo "${msg}"
 	fi
+}
+
+function common_error() {
+	local msg=$1
+	echo "${msg}" 1>&2
 }
 
 notice=false
