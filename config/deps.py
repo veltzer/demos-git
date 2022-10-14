@@ -1,4 +1,4 @@
 packages=[
-    'shellcheck',
-    'git-filter-repo',
+    "shellcheck",
+    "git-filter-repo",
 ]
