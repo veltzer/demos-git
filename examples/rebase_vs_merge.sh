@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 source common.sh
 
@@ -72,16 +72,13 @@ function doit() {
 	rm -rf server user1 user2
 }
 
-
-exec 3>&1 4>&2 1> /dev/null 2> /dev/null
-
-debug merge
-doit false
-sleep 2
-debug rebase
-doit true
-
-exec 1>&3 2>&4
+{
+	debug merge
+	doit false
+	# sleep 2
+	debug rebase
+	doit true
+} 1> /dev/null 2> /dev/null || true
 
 # show results
 echo "merge log"
