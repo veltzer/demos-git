@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 source common.sh
 
@@ -52,12 +52,7 @@ function doit() {
 	git_common_waitkey
 
 	debug "user2 pulls..."
-	if $rebase
-	then
-		git pull --rebase=true --no-edit
-	else
-		git pull --rebase=false --no-edit
-	fi
+	git pull --rebase=$rebase --no-edit
 	debug "user2 pushes..."
 	git push
 	debug "user1 pulls..."
@@ -82,6 +77,7 @@ exec 3>&1 4>&2 1> /dev/null 2> /dev/null
 
 debug merge
 doit false
+sleep 2
 debug rebase
 doit true
 
