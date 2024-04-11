@@ -1,5 +1,4 @@
-Git bisect exercise - use git to find a commit
-that introduced a bug...
+Git bisect exercise - use git to find a commit that introduced a bug...
 
 - create a new repo
 - create a first commit for that repo
