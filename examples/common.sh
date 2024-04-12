@@ -52,7 +52,22 @@ function common_show_history() {
 	cd ../../
 }
 
-function common_repo_with_one_commit() {
+function common_log() {
+	local repo=$1
+	local folder="playground/${repo}"
+	cd "${folder}"
+	git log
+	cd ../../
+}
+
+function common_create_repo() {
+	local repo=$1
+	local name=$2
+	local folder="playground/${repo}"
+	git init "${folder}" > /dev/null
+}
+
+function common_create_repo_with_one_commit() {
 	local repo=$1
 	local name=$2
 	local folder="playground/${repo}"
