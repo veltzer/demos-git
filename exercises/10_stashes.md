@@ -4,7 +4,7 @@
 Give them names. Apply them. Apply them out of order.
 
 * use git stash with conflicts. What happens when you try to "git stash pop"
-into a dirty folder? What happnes if there is a conflict?
+into a dirty folder? What happens if there is a conflict?
 
 * use git stash to clear a dirty folder
 

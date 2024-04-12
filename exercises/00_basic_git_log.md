@@ -1,12 +1,14 @@
+# Basic git log
+
 Git with no server exercise
 
-- create a folder (mkdir [foldername])
-- cd into that folder (cd [foldername])
-- create a git repo in that folder (git init)
-- create some files. add them and create your first commit
-- always check your status with "git status"
-- remove some of the files you added.
-- commit and check status.
-- see your with "git log"
-- investigate some of the options of "git log" (warning! there are many)
-- show your log in various interesting ways.
+* create a folder (mkdir [foldername])
+* cd into that folder (cd [foldername])
+* create a git repo in that folder (git init)
+* create some files. add them and create your first commit
+* always check your status with "git status"
+* remove some of the files you added.
+* commit and check status.
+* see your with "git log"
+* investigate some of the options of "git log" (warning! there are many)
+* show your log in various interesting ways.

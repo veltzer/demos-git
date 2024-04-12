@@ -1,4 +1,4 @@
-personal_ws-1.1 en 994 
+personal_ws-1.1 en 1008 
 AARRR
 ACLs
 ADPlus
@@ -195,6 +195,7 @@ GCP
 GFlags
 GMM
 GOF
+GPG
 GPIO
 GPL
 GPUs
@@ -724,6 +725,8 @@ fifo
 filesystem
 filesystems
 flinger
+foldername
+followTags
 foreach
 formatters
 formjacking
@@ -741,9 +744,14 @@ gdbserver
 getpid
 gettid
 gettimeofday
+gitbash
+gitconfig
+github
 gitignore
 glibc
 gperf
+gpg
+gpgsign
 hashSetOf
 hotplug
 icc
@@ -776,6 +784,8 @@ jprobes
 kdb
 kernelshark
 kexec
+keygen
+keypair
 kgdb
 kibana
 kmemcheck
@@ -912,6 +922,7 @@ shader
 shbang
 siginterrupt
 signalfd
+signingkey
 sigprocmask
 solrconfig
 spidering
@@ -959,6 +970,7 @@ typedef
 uboot
 udev
 ui
+uncompress
 unicast
 uniq
 unittest
@@ -967,6 +979,7 @@ uring
 userspace
 valgrind
 variadic
+veltzer
 venv
 virtualenv
 virtuals
@@ -993,3 +1006,4 @@ xml
 xruns
 yaml
 yml
+yourkeyid
