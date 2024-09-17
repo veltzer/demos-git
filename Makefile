@@ -1,5 +1,5 @@
 ##############
-# PARAMETERS #
+# parameters #
 ##############
 # do you want to see the commands executed ?
 DO_MKDBG:=0
@@ -13,7 +13,7 @@ DO_MD_MDL:=1
 DO_MD_ASPELL:=1
 
 ########
-# CODE #
+# code #
 ########
 ALL:=
 
@@ -52,7 +52,7 @@ ALL+=$(MD_ASPELL)
 endif # DO_MD_ASPELL
 
 #########
-# RULES #
+# rules #
 #########
 .PHONY: all
 all: $(ALL)
