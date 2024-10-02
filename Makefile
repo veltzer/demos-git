@@ -3,10 +3,10 @@
 ##############
 # do you want to see the commands executed ?
 DO_MKDBG:=0
-# do you want to check bash syntax?
-DO_CHECK_SYNTAX:=1
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
+# do you want to check bash syntax?
+DO_CHECK_SYNTAX:=1
 # do you want to run mdl on md files?
 DO_MD_MDL:=1
 # do spell check on all?
@@ -107,3 +107,10 @@ $(MD_ASPELL): out/%.aspell: %.md .aspell.conf .aspell.en.prepl .aspell.en.pws
 	$(info doing [$@])
 	$(Q)aspell --conf-dir=. --conf=.aspell.conf list < $< | pymakehelper error_on_print sort -u
 	$(Q)pymakehelper touch_mkdir $@
+
+##########
+# alldep #
+##########
+ifeq ($(DO_ALLDEP),1)
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
+endif # DO_ALLDEP
