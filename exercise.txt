@@ -18,6 +18,6 @@
 5. Introdce the public part of your newly generated key to github under:
 	github -> settings -> ssh and gpg keys
 
-6. Creata a new reposity at github.
+6. Creata a new repository at github.
 
 ===== once you are here you can start working with git ====
