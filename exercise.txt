@@ -13,6 +13,7 @@
 3. Open an account at https://github.com
 
 4. Create a keypair by running "ssh-keygen" and answering all the questions.
+	keep the phrase **EMPTY**.
 
 5. Introdce the public part of your newly generated key to github under:
 	github -> settings -> ssh and gpg keys
