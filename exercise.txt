@@ -23,10 +23,11 @@
 
 ===== once you are here you can start working with git ====
 
-7. clone your repository via the SSH protocol.
+7. clone your repository via the SSH protocol. (the green button).]
+	git clone [url]
 
 8. on the command line, add files to your git repo using the command "git add"
 
-9. Commit your changes via "git commit -m [name]"
+9. Commit your changes via "git commit -m [your fill this]"
 
 10. Push your changes to github using "git push"
