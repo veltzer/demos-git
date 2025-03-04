@@ -1,0 +1,22 @@
+
+
+
+1. Install or make sure you have already installed git on your computer.
+	How do you check? Run a console and in it run the command "git".
+	If you get a response, congratulations, you have git.
+	If you don't, go install git.
+
+2. you should also have a command called "ssh-keygen"
+
+==== once you are here you have both git and ssh-keygen ====
+
+3. Open an account at https://github.com
+
+4. Create a keypair by running "ssh-keygen" and answering all the questions.
+
+5. Introdce the public part of your newly generated key to github under:
+	github -> settings -> ssh and gpg keys
+
+6. Creata a new reposity at github.
+
+===== once you are here you can start working with git ====
