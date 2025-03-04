@@ -22,3 +22,11 @@
 6. Creata a new repository at github.
 
 ===== once you are here you can start working with git ====
+
+7. clone your repository via the SSH protocol.
+
+8. on the command line, add files to your git repo using the command "git add"
+
+9. Commit your changes via "git commit -m [name]"
+
+10. Push your changes to github using "git push"
