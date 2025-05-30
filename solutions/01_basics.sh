@@ -18,17 +18,17 @@ git init demo
 cd demo
 for x in {1..3}
 do
-	touch $x.txt
-	git add $x.txt
-	git commit -m "commit $x"
+	touch "${x}.txt"
+	git add "${x}.txt"
+	git commit -m "commit ${x}"
 done
 git config user.name "Bill Gates"
 git config user.email "billg@microbluff.com"
 for x in {4..6}
 do
-	touch $x.txt
-	git add $x.txt
-	git commit -m "commit $x"
+	touch "${x}.txt"
+	git add "${x}.txt"
+	git commit -m "commit ${x}"
 done
 git log | cat
 cd ..

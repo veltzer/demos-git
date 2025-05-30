@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
+# shellcheck source=examples/common.sh
 source common.sh
 
 function doit() {
@@ -24,15 +25,15 @@ function doit() {
 	debug "histories above should be the same..."
 	debug "press any key..."
 	git_common_waitkey
-	cd ../user1
-	for i in {1..5}; do touch user1change$i.txt; git add . ; git commit -m "user1 change $i"; done
-	cd ../user2
-	for i in {1..3}; do touch user2change$i.txt; git add . ; git commit -m "user2 change $i"; done
+	cd ../user1 || exit
+	for i in {1..5}; do touch "user1change${i}.txt"; git add . ; git commit -m "user1 change ${i}"; done
+	cd ../user2 || exit
+	for i in {1..3}; do touch "user2change${i}.txt"; git add . ; git commit -m "user2 change ${i}"; done
 
-	cd ../user1
+	cd ../user1 || exit
 	debug "history for user1..."
 	git log --pretty=format:"%h %s" --graph
-	cd ../user2
+	cd ../user2 || exit
 	debug "history for user2..."
 	git log --pretty=format:"%h %s" --graph
 	debug "histories above are different..."
@@ -40,19 +41,19 @@ function doit() {
 	git_common_waitkey
 
 	debug "user1 pushed..."
-	cd ../user1
+	cd ../user1 || exit
 	git push
 	debug "press any key..."
 	git_common_waitkey
 
 	debug "user2 cannot push..."
-	cd ../user2
+	cd ../user2 || exit
 	git push
 	debug "press any key..."
 	git_common_waitkey
 
 	debug "user2 pulls..."
-	if $rebase
+	if "${rebase}"
 	then
 		git pull --rebase=true --no-edit
 	else
@@ -61,19 +62,19 @@ function doit() {
 	debug "user2 pushes..."
 	git push
 	debug "user1 pulls..."
-	cd ../user1
+	cd ../user1 || exit
 	git pull
 
 	debug "recording logs for posterity..."
 	debug "user1"
-	git log --pretty=format:"%h %s" --graph > /tmp/log1_$rebase
+	git log --pretty=format:"%h %s" --graph > "/tmp/log1_${rebase}"
 	debug "user2"
-	cd ../user2
-	git log --pretty=format:"%h %s" --graph > /tmp/log2_$rebase
+	cd ../user2 || exit
+	git log --pretty=format:"%h %s" --graph > "/tmp/log2_${rebase}"
 
-	diff /tmp/log1_$rebase /tmp/log2_$rebase
+	diff "/tmp/log1_${rebase}" "/tmp/log2_${rebase}"
 
-	cd ..
+	cd .. || exit
 	rm -rf server user1 user2
 }
 

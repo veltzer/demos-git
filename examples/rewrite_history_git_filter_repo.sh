@@ -4,6 +4,7 @@
 # References:
 # - https://github.com/newren/git-filter-repo
 
+# shellcheck source=examples/common.sh
 source common.sh
 
 common_setup

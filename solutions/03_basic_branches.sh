@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 rm -rf demo
 git init demo
@@ -8,24 +8,24 @@ git add hello.txt
 git commit -m "first commit"
 for x in {1..3}
 do
-	touch "master$x.txt"
-	git add "master$x.txt"
-	git commit -m "master commit $x"
+	touch "master${x}.txt"
+	git add "master${x}.txt"
+	git commit -m "master commit ${x}"
 done
 git switch -c branch1
 for x in {1..3}
 do
-	touch "branch1$x.txt"
-	git add "branch1$x.txt"
-	git commit -m "branch1 commit $x"
+	touch "branch1${x}.txt"
+	git add "branch1${x}.txt"
+	git commit -m "branch1 commit ${x}"
 done
 echo hello
 git switch master
 for x in {4..6}
 do
-	touch "master$x.txt"
-	git add "master$x.txt"
-	git commit -m "master commit $x"
+	touch "master${x}.txt"
+	git add "master${x}.txt"
+	git commit -m "master commit ${x}"
 done
 git switch -c branch2
 git pull . branch1

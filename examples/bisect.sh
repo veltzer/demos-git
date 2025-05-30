@@ -2,6 +2,7 @@
 
 # This is a demo of running git bisect
 
+# shellcheck source=examples/common.sh
 source common.sh
 
 common_setup

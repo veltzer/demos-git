@@ -2,6 +2,7 @@
 
 # This is a simple demo that creates a repo with commits and shows it's history
 
+# shellcheck source=examples/common.sh
 source common.sh
 
 common_setup

@@ -4,6 +4,7 @@
 # It seems that shallow-exclude and --depth are only usable for remote repos
 # and that's why this script clones a remote repo
 
+# shellcheck source=examples/common.sh
 source common.sh
 
 echo "original repo"

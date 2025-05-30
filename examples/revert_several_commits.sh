@@ -4,6 +4,7 @@
 # References:
 # - https://gist.github.com/kanzure/5558267
 
+# shellcheck source=examples/common.sh
 source common.sh
 
 common_setup

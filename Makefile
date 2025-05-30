@@ -26,22 +26,17 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
-# dependency on the makefile itself
-ifeq ($(DO_ALLDEP),1)
-.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
-endif # DO_ALLDEP
-
-ALL_SH:=$(shell find examples solutions -type f -and -name "*.sh" 2>/dev/null)
-ALL_STAMP:=$(addprefix out/, $(addsuffix .stamp, $(ALL_SH)))
-
-ifeq ($(DO_CHECK_SYNTAX),1)
-ALL+=$(ALL_STAMP)
-endif # DO_CHECK_SYNTAX
+ALL_SH_SRC:=$(shell find . -type f -name "*.sh" -and -not -path "./.venv/*" -printf "%P\n")
+ALL_SH_CHECK:=$(addprefix out/, $(addsuffix .check, $(ALL_SH_SRC)))
 
 MD_SRC:=$(shell find exercises -type f -and -name "*.md")
 MD_BAS:=$(basename $(MD_SRC))
 MD_MDL:=$(addprefix out/,$(addsuffix .mdl,$(MD_BAS)))
 MD_ASPELL:=$(addprefix out/,$(addsuffix .aspell,$(MD_BAS)))
+
+ifeq ($(DO_CHECK_SYNTAX),1)
+ALL+=$(ALL_SH_CHECK)
+endif # DO_CHECK_SYNTAX
 
 ifeq ($(DO_MD_MDL),1)
 ALL+=$(MD_MDL)
@@ -66,12 +61,12 @@ check:
 .PHONY: debug
 debug:
 	$(info ALL is $(ALL))
-	$(info ALL_SH is $(ALL_SH))
-	$(info ALL_STAMP is $(ALL_STAMP))
 	$(info MD_SRC is $(MD_SRC))
 	$(info MD_BAS is $(MD_BAS))
 	$(info MD_ASPELL is $(MD_ASPELL))
 	$(info MD_MDL is $(MD_MDL))
+	$(info ALL_SH_SRC is $(ALL_SH_SRC))
+	$(info ALL_SH_CHECK is $(ALL_SH_CHECK))
 
 .PHONY: first_line_stats
 first_line_stats:
@@ -93,11 +88,10 @@ spell_many:
 ############
 # patterns #
 ############
-$(ALL_STAMP): out/%.stamp: % .shellcheckrc
+$(ALL_SH_CHECK): out/%.check: % .shellcheckrc
 	$(info doing [$@])
-	$(Q)mkdir -p $(dir $@)
-	$(Q)shellcheck --severity=error --shell=bash --external-sources --source-path="$$HOME" $<
-	$(Q)touch $@
+	$(Q)shellcheck --shell=bash --external-sources --source-path="$${HOME}" $<
+	$(Q)pymakehelper touch_mkdir $@
 $(MD_MDL): out/%.mdl: %.md .mdlrc .mdl.style.rb
 	$(info doing [$@])
 	$(Q)GEM_HOME=gems gems/bin/mdl $<

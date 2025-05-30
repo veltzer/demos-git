@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+# shellcheck source=examples/common.sh
 source common.sh
 
 function doit() {
@@ -25,9 +26,9 @@ function doit() {
 	debug "press any key..."
 	git_common_waitkey
 	cd ../user1
-	for i in {1..5}; do touch user1change$i.txt; git add . ; git commit -m "user1 change $i"; done
+	for i in {1..5}; do touch "user1change${i}.txt"; git add . ; git commit -m "user1 change ${i}"; done
 	cd ../user2
-	for i in {1..3}; do touch user2change$i.txt; git add . ; git commit -m "user2 change $i"; done
+	for i in {1..3}; do touch "user2change${i}.txt"; git add . ; git commit -m "user2 change ${i}"; done
 
 	cd ../user1
 	debug "history for user1..."
@@ -52,7 +53,7 @@ function doit() {
 	git_common_waitkey
 
 	debug "user2 pulls..."
-	git pull --rebase=$rebase --no-edit
+	git pull --rebase="${rebase}" --no-edit
 	debug "user2 pushes..."
 	git push
 	debug "user1 pulls..."
@@ -61,12 +62,12 @@ function doit() {
 
 	debug "recording logs for posterity..."
 	debug "user1"
-	git log --pretty=format:"%h %s" --graph > /tmp/log1_$rebase
+	git log --pretty=format:"%h %s" --graph > "/tmp/log1_${rebase}"
 	debug "user2"
 	cd ../user2
-	git log --pretty=format:"%h %s" --graph > /tmp/log2_$rebase
+	git log --pretty=format:"%h %s" --graph > "/tmp/log2_${rebase}"
 
-	diff /tmp/log1_$rebase /tmp/log2_$rebase
+	diff "/tmp/log1_${rebase}" "/tmp/log2_${rebase}"
 
 	cd ..
 	rm -rf server user1 user2

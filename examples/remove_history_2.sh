@@ -5,6 +5,7 @@
 # References:
 # - https://stackoverflow.com/questions/4515580/how-do-i-remove-the-old-history-from-a-git-repository
 
+# shellcheck source=examples/common.sh
 source common.sh
 
 rm -rf project

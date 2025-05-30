@@ -21,15 +21,16 @@ function common_create_commits() {
 	local number=$2
 	local name=$3
 	local folder="playground/${repo}"
-	local branch=$(git rev-parse --abbrev-ref HEAD)
-	cd "${folder}"
-	let "x=1"
+	local branch
+	branch=$(git rev-parse --abbrev-ref HEAD)
+	cd "${folder}" || exit
+	((x=1))
 	while [ "${x}" -le "${number}" ]
 	do
 		touch "${name}_${x}"
 		git add "${name}_${x}" > /dev/null
 		git commit -m "${branch} - ${name} - ${x}" > /dev/null
-		let "x=x+1"
+		((x=x+1))
 	done
 	cd ../../
 }
@@ -37,27 +38,27 @@ function common_create_commits() {
 function common_cd_repo() {
 	local repo=$1
 	local folder="playground/${repo}"
-	cd "${folder}"
+	cd "${folder}" || exit
 }
 
 function common_cd_repo_back() {
-	cd ../../
+	cd ../../ || exit
 }
 
 function common_show_history() {
 	local repo=$1
 	local folder="playground/${repo}"
-	cd "${folder}"
+	cd "${folder}" || exit
 	git log --pretty=format:"%h %s" --graph
-	cd ../../
+	cd ../../ || exit
 }
 
 function common_log() {
 	local repo=$1
 	local folder="playground/${repo}"
-	cd "${folder}"
+	cd "${folder}" || exit
 	git log
-	cd ../../
+	cd ../../ || exit
 }
 
 function common_create_repo() {
@@ -89,14 +90,14 @@ function common_server_two_users() {
 	git init --bare playground/server
 	git clone playground/server playground/user1
 	git clone playground/server playground/user2
-	cd playground/user1
+	cd playground/user1 || exit
 	touch hello.txt
 	git add hello.txt
 	git commit -m "first commit"
 	git push
-	cd ../user2
+	cd ../user2 || exit
 	git pull
-	cd ../../
+	cd ../../ || exit
 }
 
 do_wait=0
@@ -104,7 +105,7 @@ do_wait=0
 function common_waitkey() {
 	if [[ "${do_wait}" -eq 1 ]]
 	then
-		read
+		read -r
 	fi
 }
 
