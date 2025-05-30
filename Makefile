@@ -31,7 +31,7 @@ ifeq ($(DO_ALLDEP),1)
 .EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
 endif # DO_ALLDEP
 
-ALL_SH:=$(shell find examples solutions -type f -and -name "*.sh")
+ALL_SH:=$(shell find examples solutions -type f -and -name "*.sh" 2>/dev/null)
 ALL_STAMP:=$(addprefix out/, $(addsuffix .stamp, $(ALL_SH)))
 
 ifeq ($(DO_CHECK_SYNTAX),1)
